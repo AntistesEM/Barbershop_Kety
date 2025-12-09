@@ -1,0 +1,48 @@
+{% load static %}
+
+{{ services|json_script:"services-data" }}
+
+<section class="section">
+    <h2 class="section-title services">Услуги и цены</h2>
+    <div class="services-container">
+        <div id="services">
+            {% for service in services %}
+
+                <!-- Каждая услуга в виде аккордеона -->
+                <div class="service-item" id="service-{{ service.id }}">
+                    <div class="service-header" id="{{ service.id }}">
+                        <h3>{{ service.name }}</h3>
+                        {% if service.has_subsections %}
+                            <!-- <i class="service-arrow">▼</i> {# Или используйте иконку Font Awesome: <i class="fas fa-chevron-down service-arrow"></i> #} -->
+                            <i class="fas fa-chevron-down service-arrow"></i>
+                        {% endif %}
+                    </div>
+
+                    <!-- описание -->
+                    <div class="service-content">
+
+                        <!-- {% if service.description %}
+                            <p>{{ service.description }}</p>
+                        {% endif %} -->
+
+                        <!-- Если услуга имеет подразделы -->
+                        {% if service.has_subsections %}
+                            {% for subsection_name in service.subsections %}
+                                <h4 class="subsection-name">{{ subsection_name.name }}</h4>
+                            {% endfor %}
+                        {% endif %}
+
+                    </div>
+                </div>
+
+            {% empty %}
+                <p>Услуги пока не добавлены.</p>
+            {% endfor %}
+        </div>
+
+        <div class="prices"></div>
+
+        <div class="title-img"></div>
+    </div>
+</section>
+

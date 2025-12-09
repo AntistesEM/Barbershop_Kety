@@ -1,0 +1,78 @@
+.reviews:before {
+	content: 'Отзывы клиентов';
+}
+
+.reviews-container {
+	margin-top: 35px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.reviews-form {
+	width: 480px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	border: 1px solid rgba(224, 69, 4, 1);
+	border-radius: 4px;
+	padding: 45px 90px;
+}
+
+textarea {
+	height: 100px;
+	margin-bottom: 15px;
+	border: 1px solid rgb(0, 0, 0);
+	resize: none;
+}
+
+input {
+	margin-bottom: 15px;
+	border: none;
+	border-bottom: 1px solid rgb(0, 0, 0);
+	/* background: transparent; */
+	/* padding: 10px; */
+	/* font-size: 18px; */
+}
+
+input:focus,
+textarea:focus {
+	outline: none;
+  border-color: rgb(231, 75, 9);
+  transition: border-color .15s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+	color: rgb(231, 75, 9);
+	font-style: italic;
+	font-size: 13px;
+
+}
+
+.button-submit {
+	margin-top: 15px;
+	background-color: rgba(224, 69, 4, 1);
+	color: rgba(255, 255, 255, 1);
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 18px;
+}
+
+.button-submit:hover {
+	background-color: rgba(231, 75, 9, 1);
+}
+
+.message {
+	font-size: 20px;
+	margin-top: 15px;
+}
+
+.visually-hidden { display: none; }
+
+.success { color: #0a0; margin-top: 8px; }
+
+.error { color: #c00; margin-top: 8px; }

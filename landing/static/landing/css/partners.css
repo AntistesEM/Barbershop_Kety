@@ -1,0 +1,52 @@
+.section {
+	margin-top: 100px;
+	margin-bottom: 50px;
+	position: relative;
+}
+
+.section-title {
+	font-family: 'Prata-Regular', sans-serif;
+	font-size: 48px;
+	color: rgba(0, 0, 0, 1);
+	position: relative;
+}
+
+.section-title:before {
+	content: 'Наши партнеры';
+	font-family: 'Aquarelle', sans-serif;
+	font-size: 72px;
+	font-weight: normal;
+	color: rgba(224, 69, 4, 1);
+	position: absolute;
+	top: -50px;
+	left: 0;
+	z-index: -1;
+}
+
+.partners {
+	content: 'Наши партнеры';
+}
+
+.scissors {
+	width: 340px;
+	position: absolute;
+	top: 50px;
+	left: -250px;
+	z-index: -999;
+}
+
+.logos-partners {
+	margin-top: 35px;
+	display: flex;
+  justify-content: center;
+}
+
+.logo-partners {
+	width: 240px;
+}
+
+.logo-estel {
+	width: 300px;
+	margin-top: 7px;
+	margin-left: 60px;
+}

@@ -1,0 +1,94 @@
+{% extends 'landing/base.html' %}
+
+{% load static %}
+
+{% block title %} Kety - парикмахерская {% endblock %}
+
+{% block extra_head %}
+    <!-- Подключаем стили SimpleBar -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css"
+    />
+
+    <!-- Подключаем стили Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    
+    <!-- Подключаем стили Slick -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+
+    <!-- Подключаем стили -->
+    <link rel="stylesheet" href="{% static 'landing/css/partners.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/services.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/gallery.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/slider_cards.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/reviews.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/slider-reviews.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/contacts.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/back-to-top.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Включаем секции -->
+    {% include 'landing/sections/partners.html' %}
+    {% include 'landing/sections/services.html' %}
+    {% include 'landing/sections/about.html' %}
+    {% include 'landing/sections/gallery.html' %}
+    {% include 'landing/sections/reviews.html' %}
+    {% include 'landing/sections/contacts.html' %}
+{% endblock %}
+
+{% block scripts %}
+    <!-- Подключаем jQuery -->
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous">
+    </script>    
+    <script
+        src="https://code.jquery.com/jquery-migrate-3.5.2.min.js"
+        integrity="sha256-ocUeptHNod0gW2X1Z+ol3ONVAGWzIJXUmIs+4nUeDLI="
+        crossorigin="anonymous">
+    </script>
+
+    <!-- Подключаем Slick CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- Подключаем SimpleBar CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+
+    <!-- Подключаем Font Awesome CDN для слайдера мастеров -->
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" />
+
+    <!-- Подключаем Leaflet CDN -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+    <!-- Подключаем скрипты -->
+    <script src="{% static 'landing/js/script.js' %}"></script>
+    <script src="{% static 'landing/js/back-to-top.js' %}"></script>
+    <script src="{% static 'landing/js/services.js' %}"></script>
+    <script src="{% static 'landing/js/form-reviews.js' %}"></script>
+    <script src="{% static 'landing/js/slider_cards.js' %}"></script>
+    <script src="{% static 'landing/js/scriptmodal.js' %}"></script>
+    <script src="{% static 'landing/js/map.js' %}"></script>
+    
+    <!-- Подключаем слайдер отзывов -->
+    <script type="text/javascript">
+        $('.multiple-items-reviews').slick({
+            infinite: true,
+            dots: true,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1500
+        });
+    </script>
+
+{% endblock %}

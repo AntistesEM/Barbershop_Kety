@@ -1,0 +1,19 @@
+{% load static %}
+
+<section class="section" id="gallery">
+  <h2 class="section-title gallery">Галерея работ мастеров</h2>
+  <div class="gallery-grid">
+      {% for image in images %}
+      <div class="gallery-item">
+          <img class="cover-image" src="{{ image.image.url }}" alt="{{ image.title }}">
+      </div>
+      {% endfor %}
+  </div>
+</section>
+
+<!-- Модальное окно -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>

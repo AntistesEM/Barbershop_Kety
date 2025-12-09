@@ -1,0 +1,148 @@
+.services:before {
+	content: 'Услуги и цены';
+}
+
+.services-container {
+	min-height: 570px;
+	width: 100%;
+	margin-top: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: stretch; /* Все дочерние элементы будут растягиваться по высоте контейнера */
+	gap: 15px; /* Промежуток между дочерними элементами */
+	flex-wrap: nowrap; /* Гарантируем, что блоки остаются в одной строке, пока это возможно */
+}
+
+#services {
+	position: relative;
+	flex: 1; /* Занимает 1 часть из общего доступного пространства */
+	min-width: 200px; /* Минимальная ширина, чтобы текст не слишком сжимался */
+	max-width: 25%; /* Ограничение роста, если контент очень короткий */
+	/* border: #333 1px solid; */
+}
+
+#services::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -10px;
+	height: 100%;
+	border-right: 2px solid #000000;
+}
+
+.prices{
+	flex: 3; /* Занимает 3 части из общего доступного пространства (самый широкий) */
+	min-width: 350px; /* Минимальная ширина для прайса */
+	/* border: #333 1px solid; */
+}
+
+.title-img{
+	display: flex;
+	flex: 2; /* Занимает 2 части из общего доступного пространства */
+	min-width: 300px; /* Минимальная ширина для изображения */
+	/* border: #333 1px solid; */
+}
+
+.title-img img{
+	max-width: 100%;
+	height: auto;
+	display: block; /* Убираем лишнее пространство под изображением */
+	border-radius: 4px;
+	object-fit: cover; /* Или contain, в зависимости от того, как хотите масштабировать */
+	/* align-self: center; Центрирует изображение по вертикали в flex-контейнере img-block */
+}
+
+.services-container {
+	margin-top: 35px;
+	display: flex;
+  justify-content: center;
+}
+
+/* Стили для аккордеона */
+.service-item {
+		border: 1px solid #eee;
+		margin-bottom: 10px;
+		border-radius: 5px;
+		background-color: #fff;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.service-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 15px 20px;
+		cursor: pointer;
+		background-color: #f9f9f9;
+		border-bottom: 1px solid #eee;
+		transition: background-color 0.3s ease;
+}
+
+.service-header:hover {
+		background-color: #f0f0f0;
+}
+
+.service-header h3 {
+		margin: 0;
+		font-size: 1.2em;
+		color: #333;
+}
+
+.service-arrow {
+		font-size: 1.5em;
+		transition: transform 0.3s ease;
+		color: #555;
+}
+
+/* Стиль для развернутого состояния */
+.service-item.expanded .service-arrow {
+		transform: rotate(180deg);
+}
+
+.service-content {
+		max-height: 0; /* Изначально скрываем контент */
+		overflow: hidden;
+		transition: max-height 0.4s ease-out; /* Плавное разворачивание */
+		padding: 0 20px; /* Изначально нет отступов, появятся при max-height */
+}
+
+.service-item.expanded .service-content {
+		max-height: 1000px; /* Достаточно большое значение, чтобы вместить весь контент */
+		padding: 15px 20px; /* Отступы при разворачивании */
+}
+
+.service-content h4 {
+		margin-top: 15px;
+		margin-bottom: 10px;
+		color: #444;
+}
+
+.service-content ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+}
+
+.service-content ul li {
+		padding: 8px 0;
+		border-bottom: 1px dotted #eee;
+		color: #666;
+}
+
+.service-content ul li:last-child {
+		border-bottom: none;
+}
+
+.prices-list li{
+	padding-bottom: 10px;
+	padding-top: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-bottom: 1px solid rgb(0, 0, 0);
+	font-size: 18px;
+}
+
+.subsection-name{
+	cursor: pointer;
+}

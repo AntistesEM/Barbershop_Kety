@@ -1,0 +1,20 @@
+{% load static %}
+
+{{ address|json_script:"address-data" }}
+
+<section class="section" id="contacts">
+  <h2 class="section-title contacts">Контакты</h2>
+  <p>
+    <strong>Email:</strong>
+    <a href="mailto:{{ address.email }}" aria-label="Написать на email {{ address.email }}"> {{ address.email }}</a>
+  </p>
+  <p>
+    <strong>Телефон:</strong>
+    <a href="tel:{{ address.phone }}" aria-label="Позвонить по телефону {{ address.phone }}"> {{ address.formatted_phone_number }}</a>
+  </p>
+  <p><strong>Часы работы:</strong> {{ address.opening_hours }}</p>
+  <p><strong>Адрес:</strong> {{ address.address }}</p>
+
+  <!-- Контейнер для карты (карту инициализирует map.js) -->
+  <div id="map" role="region" aria-label="Карта расположения компании"></div>
+</section>

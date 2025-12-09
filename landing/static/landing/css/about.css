@@ -1,0 +1,105 @@
+.about:before {
+	content: 'О нас';
+}
+
+.about-text {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
+.about-title {
+	margin-bottom: 20px;
+	font-size: 30px;
+}
+
+.about-list {
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
+.slider-masters {
+	position: relative;
+	width: 100%;
+	/* border: 2px solid #ddd; */
+	overflow: hidden; /* Убираем лишние элементы, выходящие за пределы слайдера */
+}
+
+.slides-masters {
+	display: flex; /* Выстраиваем слайды в линию */
+	transition: transform 0.5s ease; /* Плавный переход при смене слайдов */
+}
+
+.slide-masters {
+	min-width: 100%; /* Каждому слайду задаем ширину 100% */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.slide-masters-photo {
+	width: 380px; /* Изображение подстраивается под ширину слайда */
+	display: block; /* Убирает пробелы под изображениями */
+}
+
+.button-masters {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: rgba(255, 255, 255, 0.8);
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	font-size: 48px;
+	color: gray;
+}
+
+.prev-masters {
+	left: 10px; /* Положение левой кнопки */
+}
+
+.next-masters {
+	right: 10px; /* Положение правой кнопки */
+}
+
+.button-masters:hover {
+	background-color: rgba(255, 255, 255, 1); /* Изменение цвета при наведении */
+	color: black;
+}
+
+.description-masters {
+	text-align: center; /* Выравнивание текста в описании */
+	padding: 10px; /* Отступ для описания */
+}
+
+.description-masters h3 {
+	font-size: 33px; /* Размер заголовка */
+	margin-bottom: 20px;
+}
+
+.description-masters p {
+	font-size: 20px; /* Размер текста */
+	margin-bottom: 10px;
+}
+
+.tel-masters {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+}
+
+.tel-masters:hover {
+	color: green;
+}
+
+.icon-phonelink-masters {
+	width: 24px;
+	height: 24px;
+	margin-right: 10px;
+}
+
+
+.simplebar-scrollbar::before {
+  background-color: #e04504;
+}

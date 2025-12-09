@@ -1,0 +1,148 @@
+/* .slider-reviews {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+} */
+
+/* оставляем */
+.slider-reviews-slick {  
+	/* margin-top: 35px; */
+  /* position: relative;
+  overflow: hidden;
+  width: 100%; */
+  max-width: 1200px;
+  margin: 35px auto 0 auto;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  color: #d48b0c;
+}
+
+
+.slick-track {
+	display: flex;
+	align-items: center;
+}
+
+.slick-slide{
+  max-height: 300px;
+	margin: 0 10px;
+	padding: 5px;
+	text-align: justify;
+	text-justify: inter-word;
+	/* box-sizing: border-box; */
+	/* background-color: rgba(231, 75, 9, 0.7); */
+	background:  radial-gradient(circle, rgba(231, 75, 9, 0.9), rgba(231, 75, 9, 0.7), rgba(231, 75, 9, 0.4), rgba(231, 75, 9, 0.7), rgba(231, 75, 9, 0.9));
+	color: rgb(255, 245, 240, 1);
+	border-radius: 5px;
+}
+
+.slick-slide p{
+  height: 200px;
+  padding-right: 5px;
+  overflow: auto;
+}
+
+.slide-reviews-name{
+  text-align: center;
+  color: black;
+	margin-bottom: 15px;
+}
+
+.slide-reviews-rating{
+	margin-top: 15px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.star.filled {
+	color: #ffd700;
+}    /* заполненная звезда (золото) */
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse; /* важно для простого CSS селектора */
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+.rating input[type="radio"] {
+  display: none; /* скрываем реальные радиокнопки */
+}
+
+.rating label {
+  font-size: 24px;
+  color: #bdbdbd;      /* цвет пустой звезды */
+  cursor: pointer;
+  transition: color .12s ease;
+  user-select: none;
+}
+
+/* Подсветка при наведении (hover) и для уже выбранных */
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input:checked ~ label {
+  color: var(--star-filled, #ffd700); /* заполненная звезда (по умолчанию золото) */
+}
+
+/* пример смены цвета для контейнера (по data-атрибуту) — опционально */
+.slide-reviews-rating[data-rating="5"] { --star-filled: #ffd700; }
+
+
+
+
+
+/* 
+.slides-reviews {
+  display: flex;
+  transition: transform 0.45s ease;
+}
+.slide-reviews {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 18px;
+  border: 1px solid rgba(224, 69, 4, 1);
+  border-radius: 4px;
+  background-color: antiquewhite;
+}
+.slide-reviews-text {
+  font-size: 16px;
+  line-height: 1.4;
+}
+.button-reviews {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.button-reviews.prev-reviews { left: 8px; }
+.button-reviews.next-reviews { right: 8px; }
+.slider-reviews-dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+.slider-reviews-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+.slider-reviews-dots button.active { background: rgba(224, 69, 4, 1); } */

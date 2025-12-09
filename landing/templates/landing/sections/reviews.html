@@ -1,0 +1,92 @@
+{% load static %}
+
+<section class="section" id="reviews">
+  <h2 class="section-title reviews">Оставьте свой отзыв</h2>
+  <div class="reviews-container">
+    <form class="reviews-form" action="{% url 'reviews:create' %}" method="post">
+      {% csrf_token %} <!-- это для Django‑шаблона — удобно для получения CSRF -->
+      <label for="name">Ваше имя:</label>
+      <input type="text" id="name" name="name" placeholder="Введите имя" required>
+      <label for="email">Ваш email:</label>
+      <input type="email" id="email" name="email" placeholder="Введите email, если хотите, чтобы мы с вами связались">
+      <label for="review">Ваш отзыв:</label>
+      <textarea id="review" name="review" placeholder="Напишите свой отзыв" required></textarea>
+
+      <!-- Рейтинг: радиогруппа, стилизованная как звёзды -->
+      <fieldset class="rating-fieldset" aria-labelledby="rating-label">
+        <legend id="rating-label">Оценка</legend>
+        <div class="rating" role="radiogroup" aria-labelledby="rating-label">
+          <input type="radio" id="rating-5" name="rating" value="5" required>
+          <label for="rating-5" title="5 из 5">★</label>
+
+          <input type="radio" id="rating-4" name="rating" value="4">
+          <label for="rating-4" title="4 из 5">★</label>
+
+          <input type="radio" id="rating-3" name="rating" value="3">
+          <label for="rating-3" title="3 из 5">★</label>
+
+          <input type="radio" id="rating-2" name="rating" value="2">
+          <label for="rating-2" title="2 из 5">★</label>
+
+          <input type="radio" id="rating-1" name="rating" value="1">
+          <label for="rating-1" title="1 из 5">★</label>
+        </div>
+      </fieldset>
+
+      <button class="button-submit" type="submit">Отправить</button>
+      <p class="success message visually-hidden" aria-live="polite"></p>
+      <p class="error message visually-hidden" aria-live="polite"></p>
+    </form>
+
+    <div class="slider-reviews-slick">
+      <!-- Обёртка всех слайдов -->
+      <div class="multiple-items-reviews">
+        {% comment %} Проходим по всем отзывам и создаём слайд для каждого {% endcomment %}
+        {% for review in reviews %}
+        <div aria-hidden="{% if not forloop.first %}true{% endif %}">
+          
+          {% if review.email %}
+          <div class="slide-reviews-name">
+            <strong>{{ review.name }}</strong>
+            <span>{{ review.created_at|date:"d.m.Y" }}</span>
+          </div>
+          {% else %}
+          <div class="slide-reviews-name">
+            <strong>{{ review.name }}</strong>
+          </div>
+          {% endif %}
+
+          <!-- Текст отзыва. Используем авто‑экранирование и перевод переносов -->
+          <div>{{ review.review|linebreaks }}</div>
+
+          <!-- Если есть рейтинг — можно вывести -->
+          {% if review.rating %}
+            <div class="slide-reviews-rating"  
+                aria-label="Оценка: {{ review.rating }} из 5">
+              <span class="rating-stars" aria-hidden="true">
+                {% for _ in "12345"|make_list %}
+                  {% if forloop.counter <= review.rating %}
+                    <span class="star filled">★</span>
+                  {% else %}
+                    <span class="star">☆</span>
+                  {% endif %}
+                {% endfor %}
+              </span>
+            </div>
+          {% endif %}
+        </div>
+        {% empty %}
+        <!-- Если отзывов нет — выводим сообщение -->
+        <div>
+          <div>Пока нет отзывов.</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Примечание: {% csrf_token %} — только если это Django‑шаблон. 
+Он вставит hidden input с именем csrfmiddlewaretoken, 
+что упрощает получение токена. -->

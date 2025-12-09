@@ -1,0 +1,65 @@
+.gallery:before {
+	content: 'Галерея работ мастеров';
+}
+
+.gallery-grid {
+	margin-top: 20px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 15px;
+}
+
+.gallery-item {
+	overflow: hidden;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+	transform: scale(1.05);
+}
+
+.cover-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* CSS для модального окна */
+.modal {
+	display: none; /* Скрыто по умолчанию */
+	position: fixed; /* Оверлей на весь экран */
+	z-index: 1000;
+	padding-top: 60px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto; /* Скрываем прокрутку */
+	background-color: rgba(0,0,0,0.9); /* Полупрозрачный фон */
+}
+
+.modal img {
+	margin: auto;
+	display: block;
+	width: auto;
+	height: 80%; /* Высота изображения */
+}
+
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: white;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+	color: red;
+	text-decoration: none;
+	cursor: pointer;
+}

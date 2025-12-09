@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Лэндинг Парикмахерской{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'landing/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/styles.css' %}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul class="header-menu">
+                    <li><a href="#partners">Партнеры</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#reviews">Отзывы</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <img src="{% static 'landing/images/logo.png' %}" alt="Логотип парикмахерской" class="logo">
+            <div>
+                <img src="{% static 'landing/images/3.png' %}" alt="Картинка" class="image-bg">
+            </div>
+            <h1 class="header-title">Парикмахерская</h1>
+            <div>
+                <img src="{% static 'landing/images/2.png' %}" alt="Картинка" class="image-left">
+            </div>
+            <p class="header-slogan">Создадим образ, который идеально подчеркнет ваш характер!</p>
+            <div class="header-advantages">
+                <article class="advantage">
+                    <img src="{% static 'landing/images/icon_1.png' %}" alt="Многолетний опыт" class="advantage-icon">
+                    <p class="advantage-text">Многолетний опыт</p>
+                </article>
+                <article class="advantage">
+                    <img src="{% static 'landing/images/icon_2.png' %}" alt="Любое время" class="advantage-icon">
+                    <p class="advantage-text">Запись ведётся в любое удобное для вас время</p>
+                </article>
+                <article class="advantage">
+                    <img src="{% static 'landing/images/icon_3.png' %}" alt="Удобное расположение" class="advantage-icon">
+                    <p class="advantage-text">Удобное расположение в городе</p>
+                </article>
+                <article class="advantage">
+                    <img src="{% static 'landing/images/icon_4.png' %}" alt="Качество" class="advantage-icon">
+                    <p class="advantage-text">Качество</p>
+                </article>
+            </div>
+        </header>
+        <main>
+            {% block content %}
+            <!-- Контент будет здесь (включаются секции через include в index.html) -->
+            {% endblock %}
+        </main>
+        <footer>
+            <div class="footer-menu">
+                <img src="{% static 'landing/images/logo.png' %}" alt="Логотип парикмахерской" class="logo footer">
+                <nav>
+                    <ul class="header-menu">
+                        <li><a href="#partners">Партнеры</a></li>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#gallery">Галерея</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="footer-right">Все права защищены © 2025</p>
+        </footer>
+    </div>
+    <button id="back-to-top" class="back-to-top" aria-label="Наверх" title="Наверх" type="button">
+        ↑
+    </button>
+    
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>
